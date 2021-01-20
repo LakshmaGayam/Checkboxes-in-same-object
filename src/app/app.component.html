@@ -1,0 +1,14 @@
+<hello name="{{ name }}"></hello>
+
+  Start editing to see some magic happen :)
+  <form>
+    <div *ngFor="let ob of newObject ;let parent = index">
+      <label>
+        {{ob.name}}
+      </label>
+      <span *ngFor="let i of ob.childArray;let childIndex = index">
+        <input type="checkbox" name="child" [checked]="i.status" (change)="onChange($event ,ob ,parent ,childIndex)" >{{i.childName}}
+      </span>
+    </div>
+    <button type="submit()" (click)="getJson()">Form</button>
+  </form>
